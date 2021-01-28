@@ -8,11 +8,8 @@ import java.lang.Math;
 public class Main {
 
     public static boolean Check(int num){
-        boolean result = false;
         int number = Math.abs(num);
-        if (Integer.bitCount(number) == 1)
-                result = true;
-        return result;
+        return Integer.bitCount(number) == 1;
     }
 
     public static void main(String[] args) {
@@ -21,11 +18,7 @@ public class Main {
 	    System.out.println("Введите число: ");
 	    if (sc.hasNextInt()) {
             a = sc.nextInt();
-            if (Check(a)){
-                System.out.println("Заданное число по абсолютной величине является степенью двойки");
-            } else {
-                System.out.println("Заданное число по абсолютной величине не является степенью двойки");
-            }
+            System.out.println("Заданное число по абсолютной величине " + (Check(a)? "является":"не является") + " степенью двойки");
         } else {
 	        System.out.println("Вы ввели не число");
         }
